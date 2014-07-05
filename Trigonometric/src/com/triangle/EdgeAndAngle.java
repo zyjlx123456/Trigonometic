@@ -4,6 +4,7 @@ package com.triangle;
  * 
  * @author zhuyunjie
  * @date 2014年6月13日
+ * 用来现实三角形的边和对角
  *
  */
 public class EdgeAndAngle {
