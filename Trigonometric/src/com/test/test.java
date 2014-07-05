@@ -1,15 +1,18 @@
 package com.test;
 
-import com.triangle.TriangleUtil;
+import com.triangle.EdgeAndAngle;
+import com.triangle.TriangleEntity;
 
 public class test {
 
 	public static void main(String[] args) {
-		/*Math.sin(Math.toRadians(120));
-		
-		System.out.println(Math.toDegrees(Math.asin(0.5)));*/
-		System.out.println("hello world");
-		
+		EdgeAndAngle a = new EdgeAndAngle(10, 0);
+		EdgeAndAngle b = new EdgeAndAngle(10, 0);
+		EdgeAndAngle c = new EdgeAndAngle(0, 90);
+
+		TriangleEntity triangle = new TriangleEntity(a, b, c);
+		triangle.processTriangle();
+		System.out.println(triangle);
 		
 	}
 }

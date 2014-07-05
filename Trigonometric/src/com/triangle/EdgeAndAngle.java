@@ -4,12 +4,21 @@ package com.triangle;
  * 
  * @author zhuyunjie
  * @date 2014年6月13日
- * 用来现实三角形的边和对角
+ * a edge and a angle of a triangle
  *
  */
 public class EdgeAndAngle {
-	private double edge; //三角形中的边
-	private double angle; //三角形中上面的边对应的角
+
+	
+	/**
+	 * a edge of a triangle
+	 */
+	private double edge; 
+	
+	/**
+	 * a angle corresponding to the edge
+	 */
+	private double angle; 
 	
 	public EdgeAndAngle(double edge,double angle) {
 		this.edge = edge;

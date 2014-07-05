@@ -2,11 +2,14 @@ package com.triangle;
 
 public class TriangleEntity {
 
-	// 三角形中对应的角a，角b，角c
+	/**
+	 * three edges and three angles of a triangle
+	 */
 	private EdgeAndAngle p_a, p_b, p_c;
 
 	/**
-	 * 初始化完成之后， 如果是两边夹一角,即知道角a的边，角b的边，和角c，则设置type为1
+	 * type of a triangle 
+	 * when two edge and their included angle known, the type is set 1;
 	 * 
 	 */
 	private int type;
@@ -20,7 +23,9 @@ public class TriangleEntity {
 	}
 
 	/**
-	 * 计算三角形的信息
+	 * 
+	 * @description calculate the information of a triangle
+	 *
 	 */
 	public void processTriangle() {
 		switch (this.type) {
@@ -32,10 +37,11 @@ public class TriangleEntity {
 		}
 	}
 
+	
 	/**
-	 * 根据type=1计算信息
-	 * 输入为两边以及夹角
-	 * 得到三边以及三角
+	 * 
+	 * @description calculate the information of a triangle when the type is 1;
+	 *
 	 */
 	private void calculateByTypeOne() {
 		double p_c_edge = TriangleUtil.calcluateEdgeByCos(p_a, p_b, p_c);
@@ -56,11 +62,12 @@ public class TriangleEntity {
 		System.out.println(triangle);
 	}
 
+
 	/**
 	 * 
-	 * @Description 实现余弦定理，知道两边以及其夹角 得到三角形所有的信息
+	 * @description decide the type of a triangle
+	 *
 	 */
-
 	private void decideType() {
 		// TODO Auto-generated method stub
 		if (p_a.getEdge() != 0 && p_b.getEdge() != 0 && p_c.getAngle() != 0) {
