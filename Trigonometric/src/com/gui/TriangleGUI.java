@@ -6,6 +6,7 @@ package com.gui;
  */
 
 import java.awt.*;
+import java.io.InputStream;
 
 import javax.swing.*;
 
@@ -33,7 +34,8 @@ public class TriangleGUI extends javax.swing.JFrame {
         picture = new javax.swing.JPanel(){
             @Override
             protected void paintComponent(Graphics g) {
-                ImageIcon icon = new ImageIcon("resource/triangle.png");
+                ImageIcon icon = new ImageIcon(getClass().getResource(  
+                        "/image/triangle.png"));
                 Image img = icon.getImage();
                 g.drawImage(img, 0, 0, icon.getIconWidth(), icon.getIconHeight(), icon.getImageObserver());
 
