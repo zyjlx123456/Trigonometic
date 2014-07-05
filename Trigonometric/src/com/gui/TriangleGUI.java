@@ -35,7 +35,7 @@ public class TriangleGUI extends javax.swing.JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 ImageIcon icon = new ImageIcon(getClass().getResource(  
-                        "/image/triangle.png"));
+                        "/image/triangle.png")); 
                 Image img = icon.getImage();
                 g.drawImage(img, 0, 0, icon.getIconWidth(), icon.getIconHeight(), icon.getImageObserver());
 
