@@ -6,7 +6,7 @@ public class TriangleEntity {
 	private EdgeAndAngle p_a, p_b, p_c;
 
 	/**
-	 * 初始化完成之后， 如果是两边夹一角,即知道角a的边，角b的边，和角c，则设置为1
+	 * 初始化完成之后， 如果是两边夹一角,即知道角a的边，角b的边，和角c，则设置type为1
 	 * 
 	 */
 	private int type;
@@ -19,6 +19,9 @@ public class TriangleEntity {
 
 	}
 
+	/**
+	 * 计算三角形的信息
+	 */
 	public void processTriangle() {
 		switch (this.type) {
 		case 1:
@@ -29,6 +32,11 @@ public class TriangleEntity {
 		}
 	}
 
+	/**
+	 * 根据type=1计算信息
+	 * 输入为两边以及夹角
+	 * 得到三边以及三角
+	 */
 	private void calculateByTypeOne() {
 		double p_c_edge = TriangleUtil.calcluateEdgeByCos(p_a, p_b, p_c);
 		this.p_c.setEdge(p_c_edge);
@@ -44,7 +52,7 @@ public class TriangleEntity {
 		EdgeAndAngle c = new EdgeAndAngle(0, 90);
 
 		TriangleEntity triangle = new TriangleEntity(a, b, c);
-		triangle.calculateByTypeOne();
+		triangle.processTriangle();
 		System.out.println(triangle);
 	}
 
