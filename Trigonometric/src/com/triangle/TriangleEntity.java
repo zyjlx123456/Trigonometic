@@ -19,7 +19,6 @@ public class TriangleEntity {
 		this.p_b = p_b;
 		this.p_c = p_c;
 		decideType();
-
 	}
 
 	/**
@@ -74,6 +73,30 @@ public class TriangleEntity {
 			this.type = 1;
 		}
 
+	}
+	
+	public EdgeAndAngle getP_a() {
+		return p_a;
+	}
+
+	public void setP_a(EdgeAndAngle p_a) {
+		this.p_a = p_a;
+	}
+
+	public EdgeAndAngle getP_b() {
+		return p_b;
+	}
+
+	public void setP_b(EdgeAndAngle p_b) {
+		this.p_b = p_b;
+	}
+
+	public EdgeAndAngle getP_c() {
+		return p_c;
+	}
+
+	public void setP_c(EdgeAndAngle p_c) {
+		this.p_c = p_c;
 	}
 
 	public String toString() {
