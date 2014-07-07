@@ -286,6 +286,11 @@ public class TriangleGUI extends javax.swing.JFrame {
     		return ;
     	}
     	
+    	if(angleABC>=180){
+    		JOptionPane.showMessageDialog(this, "¼Ð½Ç²»ÄÜ³¬¹ý180£¡");
+    		return ;
+    	}
+    	
     	TriangleEntity entity = new TriangleEntity(new EdgeAndAngle(edgeAB,0),
     			new EdgeAndAngle(edgeBC,0),new EdgeAndAngle(0,angleABC));
     	entity.processTriangle();
