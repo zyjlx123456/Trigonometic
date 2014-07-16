@@ -1,4 +1,4 @@
-package com.triangle;
+package com.trigonometric.backend.triangle;
 
 public class TriangleEntity {
 
