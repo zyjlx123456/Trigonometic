@@ -21,6 +21,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    jsp: Running Jetty web server from our application!! <br>
+    hello world <br>
   </body>
 </html>
