@@ -1,26 +1,41 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--   w w w  . j a v a  2  s .  c o m-->
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <base href="<%=basePath%>">
-    
-    <title>My JSP 'index.jsp' starting page</title>
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-  </head>
-  
-  <body>
-    hello world <br>
-  </body>
+<head>
+<script>
+function drawInner(context, startX, startY, trunkWidth, level){
+if (level < 12) {
+var changeX = 150 / (level + 1);
+var changeY = 150 / (level + 1);
+
+var topRightX = startX +  changeX;
+var topRightY = startY -  changeY;
+
+var topLeftX = startX - changeX;
+var topLeftY = startY -  changeY;
+
+context.beginPath();
+context.moveTo(startX - trunkWidth / 4, startY);
+context.quadraticCurveTo(startX - trunkWidth / 4, startY -
+trunkWidth, topLeftX, topLeftY);
+context.lineWidth = trunkWidth;
+context.lineCap = "round";
+context.stroke();
+
+drawInner(context, topLeftX, topLeftY, trunkWidth * 0.7, level + 1);
+}
+}
+
+window.onload = function(){
+canvas = document.getElementById("myCanvas");
+context = canvas.getContext("2d");
+
+drawInner(context, canvas.width , canvas.height, 50, 0);
+};
+</script>
+</head>
+<body>
+<canvas id="myCanvas" width="600" height="500" style="border:1px solid black;">
+</canvas>
+</body>
 </html>
